@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs') %> 
+    </header>
+    <main>
+        <figure>
+            <img src=<%=`/img${results[0].url}` %> alt="">
+            <figcaption><%=`/img${results[0].title}` %>
+            </figcaption>
+        </figure>
+        <hr>
+        <article>
+        <h3>All Article</h3>
+        <div class="fig-contaner">
+            <% for(i=1 ;i < results.length ; i++){ %>
+                <a href=<%=`main/${results[i]._id}`%>>
+            <figure>
+                <img src=<%=`/img${results[i].url}` %> alt="">
+                <figcaption><%= results[i].title %></figcaption>
+            </figure>
+        </a>
+            <% } %>
+        </div>
+
+        </article>
+    </main>
+    <%- include('./partials/footer.ejs') %> 
+</body>
+</html>

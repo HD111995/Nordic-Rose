@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+</head>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs')%>
+    </header>
+    <main>
+       <section class="add">
+           <h2>ADD NEW ARTICLE</h2>
+        <form action="/addit" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" id="" required placeholder="Title">
+            <div>
+            <label for="url">Upload Picture</label>
+            <input type="file" name="url" id="" required >
+        </div>
+            <input type="text" name="author" id="" required placeholder="Author">
+            <input type="text" name="author_bild" id="" required placeholder="Author Picture">
+            <input type="text" name="body" id="" required placeholder="Descripe your Article....">
+            <input type="submit" value="SEND ARTICLE">
+        </form>
+       </section>
+       <section class="what">
+        <h3>Waht to read next</h3>
+        <div class="fig-contaner">
+            <% for(i=0 ;i < 6 ; i++){ %>
+                <a href=<%=`main/${results[i]._id}`%>>
+            <figure>
+                <img src=<%=`/img${results[i].url}` %> alt="">
+                <figcaption><%= results[i].title %></figcaption>
+            </figure>
+        </a>
+            <% } %>
+        </div>
+
+       </section>
+    </main>
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>
