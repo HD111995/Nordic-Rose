@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs') %>
+    </header>
+    <main>
+        <figure>
+        <figcaption><%=result.title%></figcaption>
+        <img src=<%=`/img${result.url}` %> alt="">
+    </figure>
+    <article>
+        <div class="author">
+            <img src=<%=result.author_bild%> alt="hi">
+            <div>
+                <h3><%=result.author %></h3>
+                <p><%=`${result.published_at} . ${result.duration} min read`%></p>
+            </div>
+
+        </div>
+        <p><%= result.body%></p>
+    </article>
+    <%- include('./partials/whatTo.ejs')%>
+    </main>
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

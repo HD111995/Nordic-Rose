@@ -1,0 +1,14 @@
+<section class="what">
+    <h3>Waht to read next</h3>
+    <div class="fig-contaner">
+        <% for(i=0 ;i < 6 ; i++){ %>
+            <a href=<%=`${results[i]._id}`%>>
+        <figure>
+            <img src=<%=`/img${results[i].url}` %> alt="">
+            <figcaption><%= results[i].title %></figcaption>
+        </figure>
+    </a>
+        <% } %>
+    </div>
+
+   </section>

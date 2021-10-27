@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
     <header>
         <%- include('./partials/nav.ejs') %> 
     </header>
     <main>
+        <a href=<%=`details/${results[0]._id}`%>>
         <figure>
             <img src=<%=`/img${results[0].url}` %> alt="">
             <figcaption><%=`/img${results[0].title}` %>
             </figcaption>
         </figure>
+    </a>
         <hr>
         <article>
         <h3>All Article</h3>
         <div class="fig-contaner">
             <% for(i=1 ;i < results.length ; i++){ %>
-                <a href=<%=`main/${results[i]._id}`%>>
+                <a href=<%=`details/${results[i]._id}`%>>
             <figure>
                 <img src=<%=`/img${results[i].url}` %> alt="">
                 <figcaption><%= results[i].title %></figcaption>

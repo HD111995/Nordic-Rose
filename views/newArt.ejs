@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Article</title>
+    <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
     <header>
@@ -29,7 +30,7 @@
         <h3>Waht to read next</h3>
         <div class="fig-contaner">
             <% for(i=0 ;i < 6 ; i++){ %>
-                <a href=<%=`main/${results[i]._id}`%>>
+                <a href=<%=`details/${results[i]._id}`%>>
             <figure>
                 <img src=<%=`/img${results[i].url}` %> alt="">
                 <figcaption><%= results[i].title %></figcaption>
@@ -37,7 +38,7 @@
         </a>
             <% } %>
         </div>
-
+    
        </section>
     </main>
     <%- include('./partials/footer.ejs')%>
