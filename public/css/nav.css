@@ -10,7 +10,7 @@ nav h2 {
 }
 nav ul {
   display: flex;
-  width: 15vw;
+  width: 30vw;
   justify-content: space-between;
   list-style: none;
 }
